@@ -50,7 +50,7 @@ class Task(TaskInput):
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to your Git practice API!", "docs": "/docs"}
+    return {"message": "Welcome in task manager", "docs": "/docs"}
 
 
 @app.post("/tasks", response_model=Task, status_code=201)
