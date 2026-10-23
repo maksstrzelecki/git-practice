@@ -52,6 +52,9 @@ class Task(TaskInput):
 def root():
     return {"message": "Welcome in task manager", "docs": "/docs"}
 
+@app.get("/health")
+def health():
+    return {"status": "running"}
 
 @app.post("/tasks", response_model=Task, status_code=201)
 def create_task(task: TaskInput):
