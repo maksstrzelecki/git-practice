@@ -12,6 +12,11 @@ def client(tmp_path, monkeypatch):
     with TestClient(main.app) as client:
         yield client
 
+def test_health(client):
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
 
 def test_task_lifecycle_and_persistence(client):
     assert client.get("/tasks").json() == []
