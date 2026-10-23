@@ -50,7 +50,7 @@ class Task(TaskInput):
 
 @app.get("/")
 def root():
-    return {"message": "Welcome in task manager", "docs": "/docs"}
+    return {"message": "Set welcome to B", "docs": "/docs"}
 
 @app.get("/health")
 def health():
